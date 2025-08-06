@@ -1,12 +1,8 @@
 import { useEffect, useRef } from "react";
-import CarouselItem from "./CarouselItem";
-import "./carousel.css";
+import CarouselItem from "../CarouselItem";
+import styles from './InfiniteCarousel.module.css';
 
-export type ImageItem = {
-  id: string;
-  author: string;
-  download_url: string;
-};
+import type { ImageItem } from "./types";
 
 type Props = {
   images: ImageItem[];
@@ -17,7 +13,7 @@ type Props = {
 
 export default function InfiniteCarousel({
   images,
-  cloneCount = 1,
+  cloneCount = 2,
   itemWidth = 300,
   scrollSpeed = 8,
 }: Props) {
@@ -86,9 +82,9 @@ export default function InfiniteCarousel({
   }, [images, cloneCount, scrollSpeed]);
 
   return (
-    <div className="carousel-wrapper" ref={carousel}>
+    <div className={styles.carouselWrapper} ref={carousel}>
       {extended.map((img, i) => (
-        <CarouselItem key={img.id} imgUrl={img.download_url} imgTitle={img.author} imageWidth={itemWidth}/>
+        <CarouselItem key={img.id} imgUrl={img.download_url} imgTitle={img.author} />
       ))}
     </div>
   );

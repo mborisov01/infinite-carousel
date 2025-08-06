@@ -1,5 +1,6 @@
-import InfiniteCarousel, { ImageItem } from "./components/InfiniteCarousel";
-import { useFetch } from "./components/useFetch";
+import InfiniteCarousel from './components/InfiniteCarousel';
+import { useFetch } from './hooks/useFetch';
+import type { ImageItem } from "./components/InfiniteCarousel/types";
 import './App.css';
 
 function App() {

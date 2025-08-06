@@ -1,0 +1,37 @@
+.carouselItem {
+    flex: 0 0 auto;
+    width: clamp(60%, 80vw, 300px);
+    margin: 0 clamp(0.5rem, 2vw, 1rem);
+    box-sizing: border-box;
+  }
+  
+  .carouselItem img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+    display: block;
+    border-radius: 12px;
+  }
+  
+  /* Mobile (portrait) */
+  @media (max-width: 600px) {
+  
+    .carouselItem {
+      width: 80vw;
+      margin: 0 0.5rem;
+    }
+  }
+  
+  /* Mobile (landscape or portrait) */
+  @media (min-width: 601px) and (max-width: 1024px) {
+    .carouselItem {
+      width: clamp(180px, 50vw, 250px);
+    }
+  }
+  
+  /* Larger screens */
+  @media (min-width: 1440px) {
+    .carouselItem {
+      width: 280px;
+    }
+  }
