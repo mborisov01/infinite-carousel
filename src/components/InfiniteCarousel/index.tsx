@@ -79,12 +79,12 @@ export default function InfiniteCarousel({
 
     el.addEventListener("wheel", handleWheel, { passive: false });
     return () => el.removeEventListener("wheel", handleWheel);
-  }, [images, cloneCount, scrollSpeed]);
+  }, [images, cloneCount, scrollSpeed, itemWidth]);
 
   return (
     <div className={styles.carouselWrapper} ref={carousel}>
       {extended.map((img, i) => (
-        <CarouselItem key={img.id} imgUrl={img.download_url} imgTitle={img.author} />
+        <CarouselItem key={img.id + i} imgUrl={img.download_url} imgTitle={img.author} />
       ))}
     </div>
   );
